@@ -93,7 +93,7 @@
 <body>
 
 <!-- Background Music -->
-<audio id="music" loop>
+<audio id="bgMusic" loop>
   <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
 </audio>
 
@@ -137,6 +137,9 @@
   // YES CLICK ❤️
   yesBtn.addEventListener("click", () => {
 
+    // start music (browser-approved)
+  document.getElementById("bgMusic").play();
+
     // CONFETTI BLAST 🎉
     confetti({
       particleCount: 300,
@@ -147,7 +150,7 @@
     card.innerHTML = `
       <div class="yay">YAY!!! 💕</div>
       <img class="gif" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
-      <h2>I knew it 😍</h2>
+      <h2>😍</h2>
     `;
 
     // Fireworks loop 🎆
