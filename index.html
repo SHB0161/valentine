@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valentine 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #ffb6c1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 40px 50px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      width: 350px;
+    }
+
+    .heart {
+      font-size: 80px;
+    }
+
+    h1 {
+      margin: 20px 0;
+      color: #ff4d6d;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      position: relative;
+      height: 80px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background: #ff4d6d;
+      color: white;
+      margin-right: 20px;
+    }
+
+    #noBtn {
+      background: #ddd;
+      color: #333;
+      position: absolute;
+    }
+
+    .small-text {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    .yay {
+      font-size: 70px;
+      color: #ff4d6d;
+    }
+
+    img {
+      margin-top: 20px;
+      width: 250px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <div class="heart">❤️</div>
+    <h1>Pariya, will you be my Valentine?</h1>
+
+    <div class="buttons">
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+
+    <div class="small-text">I don’t take no for an answer</div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const card = document.getElementById("card");
+
+    function moveNoButton() {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 100 - 50;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    noBtn.addEventListener("mouseenter", moveNoButton);
+    noBtn.addEventListener("touchstart", moveNoButton);
+
+    yesBtn.addEventListener("click", () => {
+      card.innerHTML = `
+        <div class="yay">YAY! 🎉</div>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3FzbXl4cm5rMWI2aHBvdGZkZ3ZrNjZ3aHc5dnVxZWR5bHFpZW1pNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hvRJCLFzcasrR4ia7z/giphy.gif" alt="Happy GIF">
+      `;
+    });
+  </script>
+
+</body>
+</html>
